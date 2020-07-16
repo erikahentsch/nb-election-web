@@ -2,6 +2,8 @@
 
 var express = require('express');
 
+var path = require('path');
+
 var PORT = process.env.HTTP_PORT || 4001;
 var app = express();
 app.use(express["static"](path.join(__dirname, 'client', 'build')));
