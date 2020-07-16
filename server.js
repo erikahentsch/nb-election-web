@@ -6,9 +6,16 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'client', 'build')))
 
+app.use('static', express.static(path.join(__dirname, 'public')))
+
 app.get('/', (req,res)=>{
     res.send('flowers smell nice');
 });
+
+app.get("/static", (req, res)=> {
+    let image = "<img src={'/camera.png'} />"
+    res.send(image)
+})
 
 app.get('/flower', (req,res)=>{
     res.json({
