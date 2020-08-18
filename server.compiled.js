@@ -6,7 +6,7 @@ var path = require('path');
 
 var PORT = process.env.HTTP_PORT || 4001;
 var app = express();
-app.use(express["static"](path.join(__dirname, 'client', 'build')));
+app.use(express["static"](path.join(__dirname, 'map-widget', 'build')));
 app.use('static', express["static"](path.join(__dirname, 'public')));
 app.get('/', function (req, res) {
   res.send('flowers smell nice');

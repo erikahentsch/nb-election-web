@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel server.js --out-file server.compiled.js",
-    "buildClient": "cd client && npm run build",
+    "build:server": "babel server.js --out-file server.compiled.js",
+    "build:map": "cd map-widget && npm run build",
+    "build": "npm run build:server && npm run build:map", 
     "start": "nodemon --exec babel-node server.js --ignore client",
-    "dev": "concurrently \"nodemon server.js\" \"cd client/ && npm start\" "
+    "dev": "concurrently \"nodemon server.js\" \"cd map-widget/ && npm start\" "
   },
   "keywords": [],
   "author": "",

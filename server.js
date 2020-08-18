@@ -4,7 +4,7 @@ const path = require('path')
 const PORT = process.env.HTTP_PORT || 4001;
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'client', 'build')))
+app.use(express.static(path.join(__dirname, 'map-widget', 'build')))
 
 app.use('static', express.static(path.join(__dirname, 'public')))
 
